@@ -6,11 +6,18 @@ Attendees will then write their own TurnablePerson class,
 by filling in the empty methods.
 
 Since Person is already written, you can import this Class
-into a python environment by being in the same directory and typing
-$ python
- or
-$ ipython
+into a python environment by opening a terminal in the same
+directory and running either
+ python
+or
+ ipython
+then
  >> from exercise_1 import Person
+You can then start playing around with the Person class:
+ >> pers = Person(pos=5)
+ >> pers.display()
+ >> pers.move_right(3)
+ >> pers.move_left(1)
 
 Alternatively you can run the script at the bottom by:
 $ python exercise_1.py
