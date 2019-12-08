@@ -17,7 +17,7 @@ $ python exercise_1.py
 Though keep in mind, some code is missing so things might break.
 """
 
-class Person(object):
+class Person():
     """
     A stick figure person that exists on a 1-D path.
     A person can move back or forward until it reaches
@@ -81,37 +81,62 @@ class Person(object):
         print(''.join(labels))                                           
 
 
-class TurnablePerson(Person):
+class TurnablePerson():
     ALLOWED_DIRECS = ['left', 'right']
     pos = None
     direc = None
     
     def __init__(self, pos, direc):
+        """
+        The initialisation method of TurnablePerson. This method is automatically called 
+        when a TurnablePerson is created.
+        """
         print('---- WARNING: I AM NOT YET IMPLEMENTED! ----')
         if direc not in self.ALLOWED_DIRECS:
             raise UserWarning('direc must be one of {}'.format(self.ALLOWED_DIRECS))
+
         # IMPLEMENT ME
 
         self.display()
 
     def change_direction(self, new_direc):
+        """
+        Update the internal state of the object based on some new input.
+        """
         if new_direc not in self.ALLOWED_DIRECS:
             raise UserWarning('direc must be one of {}'.format(self.ALLOWED_DIRECS))
-        # IMPLMENT ME!
+        # IMPLEMENT ME!
 
         self.display()
 
     def move_forward(self, steps=1):
+        """
+        Move the person `steps` in the direciton they are facing
+        Hint: The behaviour of this method will depend on the value in
+        self.direc
+        """
         # IMPLEMENT ME!
 
         self.display()
 
     def move_backward(self, steps=1):
+        """
+        Move the person `steps` in the direciton they are facing
+        Hint: The behaviour of this method will depend on the value in
+        self.direc
+        """
         # IMPLEMENT ME!
 
         self.display()
 
     def display(self):
+        """
+        Display the person, where their appearance changes based
+        on the direction they are facing.
+
+        Try and use the parent class's display method. Think about
+        what needs to change in a TurnablePerson's state.
+        """
         if self.direc == 'left':
             self.torso = '>| '
         elif self.direc == 'right':
