@@ -6,11 +6,18 @@ Attendees will then write their own TurnablePerson class,
 by filling in the empty methods.
 
 Since Person is already written, you can import this Class
-into a python environment by being in the same directory and typing
-$ python
- or
-$ ipython
+into a python environment by opening a terminal in the same
+directory and running either
+ python
+or
+ ipython
+then
  >> from exercise_1 import Person
+You can then start playing around with the Person class:
+ >> pers = Person(pos=5)
+ >> pers.display()
+ >> pers.move_right(3)
+ >> pers.move_left(1)
 
 Alternatively you can run the script at the bottom by:
 $ python exercise_1.py
@@ -88,8 +95,8 @@ class TurnablePerson():
     
     def __init__(self, pos, direc):
         """
-        The initialisation method of TurnablePerson. This method is automatically called 
-        when a TurnablePerson is created.
+        The initialisation method of TurnablePerson. This method
+        is automatically called when a TurnablePerson is created.
         """
         print('---- WARNING: I AM NOT YET IMPLEMENTED! ----')
         if direc not in self.ALLOWED_DIRECS:
@@ -101,10 +108,12 @@ class TurnablePerson():
 
     def change_direction(self, new_direc):
         """
-        Update the internal state of the object based on some new input.
+        Update the internal state of the object based on some
+        new input.
         """
         if new_direc not in self.ALLOWED_DIRECS:
-            raise UserWarning('direc must be one of {}'.format(self.ALLOWED_DIRECS))
+            raise UserWarning('direc must be one of {}'.format(
+                               self.ALLOWED_DIRECS))
         # IMPLEMENT ME!
 
         self.display()
@@ -151,8 +160,7 @@ class TurnablePerson():
         print(lbuff * ' _ ' + self.legs + rbuff * ' _ ')
         labels = ['{:^3}'.format(i) for i in range(self._LBOUND,
                                                    self._RBOUND+1)]
-        print(''.join(labels))                                           
-
+        print(''.join(labels))
 
 # This weird if statement is just a fancy way of making sure the below
 # code is only run if this file is executed like a script:
@@ -161,7 +169,7 @@ class TurnablePerson():
 # run.
 if __name__ == '__main__':
     pos = 5
-    print('--- Construcintg a  person at position ' + str(pos))
+    print('--- Constructing a person at position ' + str(pos))
     person1 = Person(pos=pos)
     print('--- Moving person right 1')
     person1.move_right(1)
@@ -180,7 +188,7 @@ if __name__ == '__main__':
     mytp1.move_forward(1)
     print('--- Moving person backward 2')
     mytp1.move_backward(2)
-    print('--- Turning person around')
+    print('--- Turning person to face left')
     mytp1.change_direction('left')
     print('--- Moving person forward 4')
     mytp1.move_forward(4)

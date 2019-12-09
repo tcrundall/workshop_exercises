@@ -55,7 +55,8 @@ class TurnablePerson(Person):
 
     def __init__(self, pos, direc):
         if direc not in self.ALLOWED_DIRECS:
-            raise UserWarning('direc must be one of {}'.format(self.ALLOWED_DIRECS))
+            raise UserWarning('direc must be one of {}'.format(
+                              self.ALLOWED_DIRECS))
         print('---- WARNING: I AM NOT YET IMPLEMENTED! ----')
         # IMPLEMENT ME
 
@@ -66,7 +67,8 @@ class TurnablePerson(Person):
         Update the internal state of the object based on some new input.
         """
         if new_direc not in self.ALLOWED_DIRECS:
-            raise UserWarning('direc must be one of {}'.format(self.ALLOWED_DIRECS))
+            raise UserWarning('direc must be one of {}'.format(
+                              self.ALLOWED_DIRECS))
         # IMPLMENT ME!
 
         self.display()
@@ -101,14 +103,15 @@ class TurnablePerson(Person):
         """
         # IMPLMENT ME!
         
-        # Hint: change something about the person's stored appearance here...
+        # Hint: change something about the person's stored appearance
+        # here...
 
         # Then we can call the Person display method:
         super(TurnablePerson, self).display()
 
 if __name__ == '__main__':
     pos = 5
-    print('--- Construcintg a  hatperson at position ' + str(pos))
+    print('--- Constructing a  hatperson at position ' + str(pos))
     hatperson1 = HatPerson(pos=pos, hat='(^)')
 
     # Note how we can use move_right and move_left methods, despite
@@ -121,7 +124,7 @@ if __name__ == '__main__':
     hatperson1.move_right(4)
     
     pos = 7
-    print('--- Construcintg a turnable person at position ' + str(pos))
+    print('--- Constructing a turnable person at position ' + str(pos))
     mytp1 = TurnablePerson(pos=pos, direc='right')
     print('--- Moving person forward 1')
     mytp1.move_forward(1)
