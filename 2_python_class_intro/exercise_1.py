@@ -89,6 +89,13 @@ class Person():
 
 
 class TurnablePerson():
+    _LBOUND = 1
+    _RBOUND = 9
+
+    head  = ' O '
+    torso = ' |<'
+    legs  = ' ^ '
+
     ALLOWED_DIRECS = ['left', 'right']
     pos = None
     direc = None
